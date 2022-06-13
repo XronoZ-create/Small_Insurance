@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------FOR UBUNTU 18.04:----------------------------------------------------------------------
+
+apt-get update;apt-get install -y locales;locale-gen "ru_RU.UTF-8";sudo apt-get -y install language-pack-ru;sudo update-locale LANG=ru_RU.UTF-8;sudo apt-get update;sudo apt-get install -y htop;\
+sudo apt-get install -y unzip xvfb libxi6 libgconf-2-4;wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;sudo apt --fix-broken install;sudo apt-get -y install default-jdk;wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/chromium-browser/93.0.4577.63-0ubuntu0.18.04.1/chromium-browser_93.0.4577.63-0ubuntu0.18.04.1.dsc;\
+wget https://chromedriver.storage.googleapis.com/92.0.4515.107/chromedriver_linux64.zip -O /usr/local/bin/chromedriver_linux64.zip;wget https://chromedriver.storage.googleapis.com/92.0.4515.107/chromedriver_linux64.zip -O /usr/bin/chromedriver_linux64.zip;\
+sudo apt-get -y install unrar;sudo apt-get -y install unzip;unzip /usr/local/bin/chromedriver_linux64.zip -d /usr/local/bin/;unzip /usr/bin/chromedriver_linux64.zip -d /usr/bin/;sudo apt update;\
+sudo chmod +x /usr/local/bin/chromedriver;\
+sudo apt -y install software-properties-common;sudo add-apt-repository ppa:deadsnakes/ppa;sudo apt update;sudo apt -y install python3.9;\
+sudo apt -y install python3-pip;sudo apt update;apt -y install python3.9-distutils;sudo apt update;sudo apt install curl;\
+sudo apt -y install python3.9-dev;python3.9 -m pip install --upgrade setuptools;python3.9 -m pip install --upgrade pip;python3.9 -m pip install --upgrade distlib;\
+curl https://bootstrap.pypa.io/get-pip.py | sudo -H python3.9
+
+python3.9 -m pip install selenium;\
+python3.9 -m pip install requests;\
+python3.9 -m pip install beautifulsoup4;\
+python3.9 -m pip install pycryptodome;\
+python3.9 -m pip install pycryptodomex;\
+python3.9 -m pip install selenium-wire;\
+python3.9 -m pip install loguru;\
+python3.9 -m pip install pandas;\
+python3.9 -m pip install numpy;\
+python3.9 -m pip install gspread;\
+python3.9 -m pip install oauth2client;\
+python3.9 -m pip install mail-parser;\
+python3.9 -m pip install pydantic;\
+
+sudo apt-get install run-one;\
+
+cd /root/Insurance_RCA/;python3.9 run.py > output.log &
+
+-----------------------------------------------------------------------------CRONTAB-----------------------------------------------------------------------------------
+sudo crontab -e
+0 6 * * * sudo shutdown -r
+*/5 * * * * chmod +x /root/Insurance_RCA/run.py; cd /root/Insurance_RCA/ && run-one nohup python3.9 -u ./run.py > output.log &

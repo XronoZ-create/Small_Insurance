@@ -1,6 +1,7 @@
+
 # Small_Insurance
 Микро-бот для автоматического оформления ОСАГО на Альфастрахование, 21 Век, ВСК, Югория и др. страховых компаниях
-
+![enter image description here](https://user-images.githubusercontent.com/70958549/174346665-dfbb770c-24ee-420c-8c5b-22e32d13b2c0.png)
 ## Стек
 
  - Python 3.9
